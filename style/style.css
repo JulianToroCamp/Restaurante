@@ -1,0 +1,43 @@
+body {
+    background-image:url(/img/login.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#boton-login-enviar {
+    margin-top: 3%;
+    margin-left: 40%;
+}
+
+#login {
+    margin-top: 15%;
+    width: 40%;
+}
+
+#login label {
+    font-size: 30px;
+    color: rgb(85, 2, 2);
+    font-weight: bold;
+}
+
+#login a {
+    color: rgb(85, 2, 2);
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#login a:hover{
+    color: black;
+
+}
+
+@media (max-width: 576px) { 
+    body {
+        background-image:url(/img/login-movil.jpg);
+    }
+
+    #login {
+        margin-top: 50%;
+        width: 100%;
+    }
+ }

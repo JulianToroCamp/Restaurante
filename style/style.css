@@ -8,6 +8,11 @@ body {
     margin-left: 40%;
 }
 
+#boton-registro-enviar {
+    margin-top: 3%;
+    margin-left: 18%;
+}
+
 #login {
     margin-top: 15%;
     width: 40%;
@@ -31,13 +36,36 @@ body {
 
 }
 
+#registro {
+    margin-top: 10%;
+    margin-left: 30%;
+    width: 70%;
+}
+
+#registro label {
+    color: rgb(85, 2, 2);
+    font-size:20px;
+    font-weight: bold;
+}
+
 @media (max-width: 576px) { 
     body {
         background-image:url(/img/login-movil.jpg);
     }
 
+    #boton-registro-enviar {
+        margin-top: 3%;
+        margin-left: 28%;
+    }
+
     #login {
         margin-top: 50%;
         width: 100%;
+    }
+
+    #registro {
+        margin-top: 35%;
+        margin-left: 10%;
+        width: 80%;
     }
  }

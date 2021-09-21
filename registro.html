@@ -15,36 +15,40 @@
   </head>
   <body>
     <div class="container" id="registro">
-      <form>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="inputEmail4">Nombre</label>
-            <input type="text" class="form-control" id="nombre" placeholder="Nombre completo" />
-          </div>
-          <div class="form-group col-md-6">
-            <label for="inputPassword4">Teléfono</label>
-            <input type="number" class="form-control" id="telefono" placeholder="Número de Télefono" />
-          </div>
-          <div class="form-group col-md-6">
-            <label for="inputPassword4">Dirección</label>
-            <input type="text" class="form-control" id="direccion" placeholder="Dirección" />
-          </div>
-          <div class="form-group col-md-6">
-            <label for="inputPassword4">Email</label>
-            <input type="email" class="form-control" id="correo" placeholder="Correo eléctronico" />
-          </div>
-          <div class="form-group col-md-6">
-            <label for="inputPassword4">Contraseña</label>
-            <input type="email" class="form-control" id="contraseña" placeholder="Contraseña" />
-          </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Nombre</label>
+          <input type="text" class="form-control" id="nombre" placeholder="Nombre completo" />
         </div>
-        <button type="submit" class="btn btn-primary" id="boton-registro-enviar">Registrarse</button>
-      </form>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Teléfono</label>
+          <input type="number" class="form-control" id="telefono" placeholder="Número de Télefono" />
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Dirección</label>
+          <input type="text" class="form-control" id="direccion" placeholder="Dirección" />
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Email</label>
+          <input type="email" class="form-control" id="correo" placeholder="Correo eléctronico" />
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Contraseña</label>
+          <input type="password" class="form-control" id="contrasena" placeholder="Contraseña" />
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary" id="boton-registro-enviar" onclick="crearUsuario()">Registrarse</button>
     </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
       crossorigin="anonymous"
     ></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>
+    <script src="js/conexion.js"></script>
+    <script src="/js/app.js"></script>
   </body>
 </html>

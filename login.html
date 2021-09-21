@@ -18,16 +18,16 @@
       <form>
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Correo</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su correo electronico" />
+          <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Ingrese su correo electronico" />
         </div>
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Ingrese contraseña" />
+          <input type="password" class="form-control" id="contrasena" placeholder="Ingrese contraseña" />
         </div>
         <div>
           <a href="registro.html">No tienes una cuenta? crea una</a>
         </div>
-        <button type="submit" class="btn btn-primary" id="boton-login-enviar">Enviar</button>
+        <button type="submit" class="btn btn-primary" id="boton-login-enviar" onclick="validarFormularioLogin()">Enviar</button>
       </form>
     </div>
     <script
@@ -35,5 +35,6 @@
       integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
       crossorigin="anonymous"
     ></script>
+    <script src="/js/app.js"></script>
   </body>
 </html>

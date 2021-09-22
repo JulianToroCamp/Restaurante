@@ -7,10 +7,12 @@ function crearUsuario() {
   let correo = document.getElementById("correo").value;
   let contrasena = document.getElementById("contrasena").value;
 
-  if (validarEmail(correo)) {
-    adicionarUsuario(nombre, telefono, direccion, correo, contrasena);
-  } else {
-    alert("El email ingresado no es válido");
+  if (validarDatos(nombre, telefono, direccion, correo, contrasena)) {
+    if (validarEmail(correo)) {
+      adicionarUsuario(nombre, telefono, direccion, correo, contrasena);
+    } else {
+      alert("El email ingresado no es válido");
+    }
   }
 }
 
@@ -19,6 +21,14 @@ function validarEmail(email) {
 
   if (validaEmail.test(email)) {
     return true;
+  }
+}
+
+function validarDatos(nombre, telefono, direccion, correo, contrasena) {
+  if (nombre != "" && telefono != "" && direccion != "" && correo != "" && contrasena != "") {
+    return true;
+  } else {
+    alert("Todos los campos son obligatorios.");
   }
 }
 
@@ -43,12 +53,32 @@ async function adicionarUsuario(nombre, telefono, direccion, correo, contrasena)
         Contraseña: contrasena,
       })
       .then((docRef) => {
-        alert("Registro exitoso");
+        registroExitoso();
       })
       .catch((error) => {
-        alert("Ocurrió un error en el r egistro");
+        alert("Ocurrió un error en el registro");
       });
   } else {
-    alert("El usuario ya existe en el sistema");
+    registroNoExitoso();
   }
+}
+
+function registroExitoso() {
+  Swal.fire({
+    icon: "success",
+    title: "Registro exitoso!",
+    text: "Tú registro en nuestra plataforma fué exitoso, ya puedes iniciar sesión!",
+  }).then(function () {
+    location.href = "login.html";
+  });
+}
+
+function registroNoExitoso() {
+  Swal.fire({
+    icon: "error",
+    title: "Error en el registro",
+    text: "La dirección de correo ingresada ya existe en nuestra base de datos",
+  }).then(function () {
+    document.getElementById("correo").value = "";
+  });
 }

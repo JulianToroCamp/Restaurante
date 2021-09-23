@@ -14,7 +14,6 @@ body {
 }
 
 #login {
-    margin-top: 15%;
     width: 40%;
 }
 
@@ -61,6 +60,12 @@ body {
     font-weight: bold;
 }
 
+#rotate {
+    margin-top: 3%;
+    pointer-events: none;
+    width: 20%;
+}
+
 #texto-logo {
     margin-left: 0.5%;
 }
@@ -86,3 +91,18 @@ body {
         width: 80%;
     }
  }
+
+@media (prefers-reduced-motion: no-preference) {
+    #rotate {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -20,7 +20,7 @@ function insertar_producto() {
 	let v_compra = document.getElementById('v_compra').value;
 	let v_bebidas = document.getElementById('v_bebidas').value;
 	let v_domicilio = document.getElementById('v_domicilio').value;
-	let v_venta = v_compra+v_bebidas;
+	let v_venta = parseInt (v_compra)+parseInt(v_bebidas)+parseInt (v_domicilio);
 	
 	
 	db.collection("producto").add({

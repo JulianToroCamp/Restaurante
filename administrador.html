@@ -11,7 +11,7 @@
       crossorigin="anonymous"
     />
 
-    <title>Login</title>
+    <title>Pedir en linea</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -31,20 +31,13 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
         <div class="navbar-nav" id="nav-menu">
           <a class="nav-item nav-link" href="index.html">Inicio</a>
-          <a class="nav-item nav-link disabled" href="#">Login</a>
-          <a class="nav-item nav-link" href="registro.html">Registro</a>
+          <a class="nav-item nav-link disabled" href="#">cerrar sesion</a>
         </div>
       </div>
     </nav>
-    <div class="row">
-      <div class="col-lg-12" id="menu">
-          <h3>MENÚ</h3>
-          <a href="producto.html">Producto</a><br>
-          <a href="compras.html">Compras</a><br>
-        </div>
-          
+    
       </div>
-      <div class="col-lg-12" id="contenido">
+      <div class="col-lg-12 justify-content-end" id="contenido">
         <!-- contenido -->
         <h2>Ordenes de compra</h2>
         
@@ -53,7 +46,7 @@
         <div id="insertar" style="display: none;">
         <div class="row">
           <div class="col-lg-4">			
-            <input type="text" name="nombre" id="nombre" placeholder="Orden de venta" class="form-control">
+            <input type="text" name="nombre" id="nombre" placeholder="Orden" class="form-control">
           </div>
           <div class="col-lg-4">			
             <input type="number" name="v_compra" id="v_compra" placeholder="Valor a pagar" class="form-control">
@@ -61,7 +54,7 @@
           <div class="col-lg-4">			
             <input type="text" name="domicilio" id="domicilio" placeholder="domicilio" class="form-control">
           </div>   
-        </div>
+        </div> <br>
         <div class="row">
           <div class="col-lg-4">			
             <input type="number" name="v_domicilio" id="v_domicilio" placeholder="valor de domicilio" class="form-control">
@@ -72,23 +65,16 @@
           <div class="col-lg-4">			
             <input type="number" name="v_bebidas" id="v_bebidas" placeholder="valor de bebidas" class="form-control">
           </div>
-        </div>
+        </div><br>
         <div class="row">  
-          <div class="col-lg-4">			
-            <input type="number" name="v_venta" id="v_venta" placeholder="valor a facturar" class="form-control">
-          </div>
           <div class="col-lg-4">
             <button id="guardar" class="btn btn-primary" onclick="insertar_producto();">Guardar orden</button>			
           </div>      
           <div class="col-lg-4">
             <button id="cancelar" class="btn btn-secondary" onclick="mostrar_formulario(2);">Cancelar</button>			
           </div>		
-          </div>
         </div>
-        </div>
-      
-     
-      
+        </div><br>
       <div class="row">
         <div class="col-lg-12">
             <table border="1" width="95%">

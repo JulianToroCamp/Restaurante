@@ -35,48 +35,46 @@
         </div>
       </div>
     </nav>
-    
-      </div>
-      <div class="col-lg-12 justify-content-end" id="contenido">
-        <!-- contenido -->
-        <h2>Ordenes de compra</h2>
-        
-        <button id="boton" class="btn btn-primary" onclick="mostrar_formulario(1);">Tomar orden</button>
-        <br><br>
-        <div id="insertar" style="display: none;">
+    <div class="col-lg-12 justify-content-end" id="contenido">
+      <h2>Ordenes de compra</h2>
+      <button id="boton" class="btn btn-primary" onclick="mostrar_formulario(1);">Tomar orden</button>
+      <br /><br />
+      <div id="insertar" style="display: none">
         <div class="row">
-          <div class="col-lg-4">			
-            <input type="text" name="nombre" id="nombre" placeholder="Orden" class="form-control">
-          </div>
-          <div class="col-lg-4">			
-            <input type="number" name="v_compra" id="v_compra" placeholder="Valor a pagar" class="form-control">
-          </div>     
-          <div class="col-lg-4">			
-            <input type="text" name="domicilio" id="domicilio" placeholder="domicilio" class="form-control">
-          </div>   
-        </div> <br>
-        <div class="row">
-          <div class="col-lg-4">			
-            <input type="number" name="v_domicilio" id="v_domicilio" placeholder="valor de domicilio" class="form-control">
+          <div class="col-lg-4">
+            <input type="text" name="nombre" id="nombre" placeholder="Orden" class="form-control" />
           </div>
           <div class="col-lg-4">
-            <input type="text" name="bebidas" id="bebidas" placeholder="Bebidas" class="form-control">		
+            <input type="number" name="v_compra" id="v_compra" placeholder="Valor a pagar" class="form-control" />
           </div>
-          <div class="col-lg-4">			
-            <input type="number" name="v_bebidas" id="v_bebidas" placeholder="valor de bebidas" class="form-control">
+          <div class="col-lg-4">
+            <input type="text" name="domicilio" id="domicilio" placeholder="domicilio" class="form-control" />
           </div>
-        </div><br>
-        <div class="row">  
-          <div class="col-lg-4">
-            <button id="guardar" class="btn btn-primary" onclick="insertar_producto();">Guardar orden</button>			
-          </div>      
-          <div class="col-lg-4">
-            <button id="cancelar" class="btn btn-secondary" onclick="mostrar_formulario(2);">Cancelar</button>			
-          </div>		
         </div>
-        </div><br>
-      <div class="row">
-        <div class="col-lg-12">
+        <br />
+        <div class="row">
+          <div class="col-lg-4">
+            <input type="number" name="v_domicilio" id="v_domicilio" placeholder="valor de domicilio" class="form-control" />
+          </div>
+          <div class="col-lg-4">
+            <input type="text" name="bebidas" id="bebidas" placeholder="Bebidas" class="form-control" />
+          </div>
+          <div class="col-lg-4">
+            <input type="number" name="v_bebidas" id="v_bebidas" placeholder="valor de bebidas" class="form-control" />
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-lg-4">
+            <button id="guardar" class="btn btn-primary" onclick="insertar_producto();">Guardar orden</button>
+          </div>
+          <div class="col-lg-4">
+            <button id="cancelar" class="btn btn-secondary" onclick="mostrar_formulario(2);">Cancelar</button>
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-lg-12">
             <table border="1" width="95%">
               <tr>
                 <th>Plato</th>
@@ -86,25 +84,25 @@
                 <th></th>
                 <th></th>
               </tr>
-              <tbody id="leerprod">
-              
-              </tbody>
-            </table>		
+              <tbody id="leerprod"></tbody>
+            </table>
+          </div>
         </div>
-        </div>
-      
-      <br><br>
+      </div>
+    </div>
+
+    <br /><br />
     <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
-    crossorigin="anonymous"
-  ></script>
-  <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
-  <!-- Add Firebase products that you want to use -->
-  <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="js/conexion.js"></script>
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/conexion.js"></script>
     <script src="/js/app2.js"></script>
   </body>
 </html>

@@ -14,22 +14,14 @@ function mostrar_formulario(dato) {
 
 function insertar_producto() {
 	
-	let bebidas = document.getElementById('bebidas').value;	
-	let nombre = document.getElementById('nombre').value;
-	let domicilio = document.getElementById('domicilio').value;
-	let v_compra = document.getElementById('v_compra').value;
-	let v_bebidas = document.getElementById('v_bebidas').value;
-	let v_domicilio = document.getElementById('v_domicilio').value;
-	let v_venta = parseInt (v_compra)+parseInt(v_bebidas)+parseInt (v_domicilio);
+	
+	let nombre = document.getElementById('nombre').value
+	let v_venta = document.getElementById('v_venta').value;
 	
 	
-	db.collection("pedidos telefonicos").add({
+	
+	db.collection("menu de venta").add({
     Nombre: nombre,
-	Bebidas: bebidas,
-    V_domicilio: v_domicilio,
-	V_bebidas: v_bebidas,
-    Domicilio: domicilio,
-    V_compra: v_compra,
     V_venta: v_venta,
     
 	})
@@ -40,14 +32,10 @@ function insertar_producto() {
 	    console.error("Error no guardo: ", error);
 	});
 	
-	document.getElementById('bebidas').value = "";	
-	document.getElementById('nombre').value = "";
-	document.getElementById('domicilio').value = "";
-	document.getElementById('v_compra').value = "";
-	document.getElementById('v_venta').value = "";
-	document.getElementById('v_bebidas').value = "";
-	document.getElementById('v_domicilio').value = "";	
 	
+	document.getElementById('nombre').value = "";
+	document.getElementById('v_venta').value = "";
+
 }
 
 
@@ -55,7 +43,7 @@ function leerproducto() {
 	
 	//document.getElementById("leerprod").innerHTML = '';
 	
-	db.collection("pedidos telefonicos").onSnapshot((querySnapshot) => {
+	db.collection("menu de venta").onSnapshot((querySnapshot) => {
 	
 	document.getElementById('leerprod').innerHTML = '';		
 		
@@ -64,7 +52,6 @@ function leerproducto() {
         document.getElementById('leerprod').innerHTML += `
 		       	 <tr>
 		       	 	<td>${doc.data().Nombre}</td>
-						<td>${doc.data().Domicilio}</td>
 						<td>$ ${doc.data().V_venta}.oo</td>
 						<td><button onclick="">Ver</button></td>
 						<td><button onclick="">Editar</button></td>
@@ -83,9 +70,9 @@ function eliminarproducto(id) {
 	//pregunto si voy a borrar
 	if(confirm("Esta seguro de eliminar el registro")){
 			
-			db.collection("pedidos telefonicos").doc(id).delete().then(function() {
+			db.collection("menu de venta").doc(id).delete().then(function() {
 			    console.log("Document successfully deleted!");
-			    alert('la orden fue borrado');
+			    alert('El producto fue borrado');
 			}).catch(function(error) {
 			    console.error("Error removing document: ", error);
 			});

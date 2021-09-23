@@ -11,7 +11,7 @@
       crossorigin="anonymous"
     />
 
-    <title>Pedidos telefonicos</title>
+    <title>Productos</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -39,37 +39,24 @@
       </div>
       <div class="col-lg-12 justify-content-end" id="contenido">
         <!-- contenido -->
-        <h2>Ordenes de compra</h2>
+        <h2>Menu de venta</h2>
         
-        <button id="boton" class="btn btn-primary" onclick="mostrar_formulario(1);">Tomar orden</button>
+        <button id="boton" class="btn btn-primary" onclick="mostrar_formulario(1);">Ingresar producto</button>
         <br><br>
         <div id="insertar" style="display: none;">
         <div class="row">
           <div class="col-lg-4">			
-            <input type="text" name="nombre" id="nombre" placeholder="Orden" class="form-control">
+            <input type="text" name="nombre" id="nombre" placeholder="Nombre del producto" class="form-control">
           </div>
           <div class="col-lg-4">			
-            <input type="number" name="v_compra" id="v_compra" placeholder="Valor a pagar" class="form-control">
-          </div>     
-          <div class="col-lg-4">			
-            <input type="text" name="domicilio" id="domicilio" placeholder="domicilio" class="form-control">
-          </div>   
-        </div> <br>
-        <div class="row">
-          <div class="col-lg-4">			
-            <input type="number" name="v_domicilio" id="v_domicilio" placeholder="valor de domicilio" class="form-control">
+            <input type="number" name="v_venta" id="v_venta" placeholder="precio de venta" class="form-control">
           </div>
           <div class="col-lg-4">
-            <input type="text" name="bebidas" id="bebidas" placeholder="Bebidas" class="form-control">		
-          </div>
-          <div class="col-lg-4">			
-            <input type="number" name="v_bebidas" id="v_bebidas" placeholder="valor de bebidas" class="form-control">
-          </div>
+            <button id="guardar" class="btn btn-primary" onclick="insertar_producto();">Guardar producto</button>			
+          </div>      
         </div><br>
         <div class="row">  
-          <div class="col-lg-4">
-            <button id="guardar" class="btn btn-primary" onclick="insertar_producto();">Guardar orden</button>			
-          </div>      
+         
           <div class="col-lg-4">
             <button id="cancelar" class="btn btn-secondary" onclick="mostrar_formulario(2);">Cancelar</button>			
           </div>		
@@ -79,9 +66,8 @@
         <div class="col-lg-12">
             <table border="1" width="95%">
               <tr>
-                <th>Plato</th>
-                <th>Domicilio</th>
-                <th>Valor a facturar</th>
+                <th>Producto</th>
+                <th>Precio de venta</th>
                 <th></th>
                 <th></th>
                 <th></th>
@@ -105,6 +91,6 @@
   <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="js/conexion.js"></script>
-    <script src="/js/app2.js"></script>
+    <script src="/js/app3.js"></script>
   </body>
 </html>

@@ -14,22 +14,24 @@ function mostrar_formulario(dato) {
 
 function insertar_producto() {
 	
-	var codigo = document.getElementById('codigo').value;	
-	var nombre = document.getElementById('nombre').value;
-	var proveedor = document.getElementById('proveedor').value;
-	var marca = document.getElementById('marca').value;
-	var v_compra = document.getElementById('v_compra').value;
-	var v_venta = document.getElementById('v_venta').value;
-	var stock = document.getElementById('stock').value;
+	let bebidas = document.getElementById('bebidas').value;	
+	let nombre = document.getElementById('nombre').value;
+	let domicilio = document.getElementById('domicilio').value;
+	let v_compra = document.getElementById('v_compra').value;
+	let v_bebidas = document.getElementById('v_bebidas').value;
+	let v_domicilio = document.getElementById('v_domicilio').value;
+	let v_venta = v_compra+v_bebidas;
+	
 	
 	db.collection("producto").add({
     Nombre: nombre,
-    Codigo: codigo,
-    Proveedor: proveedor,
-    Marca: marca,
+	Bebidas: bebidas,
+    V_domicilio: v_domicilio,
+	V_bebidas: v_bebidas,
+    Domicilio: domicilio,
     V_compra: v_compra,
     V_venta: v_venta,
-    Stock: stock
+    
 	})
 	.then((docRef) => {
 	    console.log("El documento fue guardado con el id: ", docRef.id);
@@ -38,13 +40,13 @@ function insertar_producto() {
 	    console.error("Error no guardo: ", error);
 	});
 	
-	document.getElementById('codigo').value = "";	
+	document.getElementById('bebidas').value = "";	
 	document.getElementById('nombre').value = "";
-	document.getElementById('proveedor').value = "";
-	document.getElementById('marca').value = "";
+	document.getElementById('domicilio').value = "";
 	document.getElementById('v_compra').value = "";
 	document.getElementById('v_venta').value = "";
-	document.getElementById('stock').value = "";	
+	document.getElementById('v_bebidas').value = "";
+	document.getElementById('v_domicilio').value = "";	
 	
 }
 
@@ -61,10 +63,8 @@ function leerproducto() {
         console.log(`${doc.id} => ${doc.data()}`);
         document.getElementById('leerprod').innerHTML += `
 		       	 <tr>
-		       	 	<td>${doc.data().Codigo}</td>
-						<td>${doc.data().Nombre}</td>
-						<td>${doc.data().Marca}</td>
-						<td>$ ${doc.data().V_compra}.oo</td>
+		       	 	<td>${doc.data().Nombre}</td>
+						<td>${doc.data().Domicilio}</td>
 						<td>$ ${doc.data().V_venta}.oo</td>
 						<td><button onclick="">Ver</button></td>
 						<td><button onclick="">Editar</button></td>

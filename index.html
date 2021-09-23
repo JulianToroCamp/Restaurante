@@ -4,20 +4,163 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="/style/home.css" />
 
-    <title>Hello, world!</title>
+    <title>Inicio</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
-
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <img src="/img/Pizza1.png" alt="pizza" id="logo" />
+      <a class="navbar-brand" id="texto-logo" href="index.html">John's Pizza</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+        <div class="navbar-nav" id="nav-menu">
+          <a class="nav-item nav-link disabled" href="index.html">Inicio</a>
+          <a class="nav-item nav-link" href="login.html">Login</a>
+          <a class="nav-item nav-link" href="#">Registro</a>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid" id="corrousel-pizza">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="img/1.jpg" alt="Primer Slide" />
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="img/2.jpg" alt="Segundo slide" />
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="img/3.jpg" alt="Tercer slide" />
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="img/4.jpg" alt="Cuarto slide" />
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+    <center>
+      <h3 id="titulos">Nuestros productos destacados</h3>
+    </center>
+    <div class="container">
+      <div class="card" style="width: 18rem">
+        <img class="card-img-top" src="img/card1.jpg" alt="Card image cap" />
+        <div class="card-body">
+          <h5 class="card-title" id="titulo-tarjetas">Pizza Carbonara</h5>
+          <p class="card-text">
+            Su textura jugosa y cremosa se la debe a los ingredientes con los que tradicionalmente se elabora la salsa carbonara: huevo, queso parmesano, sal y
+            pimienta.
+          </p>
+          <center>
+            <a href="#" class="btn btn-primary">Comprar</a>
+          </center>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem">
+        <img class="card-img-top" src="img/card2.jpg" alt="Card image cap" />
+        <div class="card-body">
+          <h5 class="card-title" id="titulo-tarjetas">Pizza napolitana</h5>
+          <p class="card-text">
+            También conocida como romana, es su masa: suave, esponjosa y algo más gruesa que la ortodoxa italiana, con los bordes más altos.
+          </p>
+          <br />
+          <center>
+            <a href="#" class="btn btn-primary">Comprar</a>
+          </center>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem">
+        <img class="card-img-top" src="img/card3.jpg" alt="Card image cap" />
+        <div class="card-body">
+          <h5 class="card-title" id="titulo-tarjetas">Pizza diávola</h5>
+          <p class="card-text">
+            La pizza Diávola se distingue por el sabor picante de su salsa, que debe notarse en cada bocado. Pero también del resto de ingredientes.
+          </p>
+          <center>
+            <a href="#" class="btn btn-primary">Comprar</a>
+          </center>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem">
+        <img class="card-img-top" src="img/card4.jpg" alt="Card image cap" />
+        <div class="card-body">
+          <h5 class="card-title" id="titulo-tarjetas">Pizza Pepperoni</h5>
+          <p class="card-text">
+            La pizza pepperoni la preferida de los auténticos amantes de la pizza tradicional: salsa de tomate, mozzarella, queso, peperroni.
+          </p>
+          <br />
+          <center>
+            <a href="#" class="btn btn-primary">Comprar</a>
+          </center>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem">
+        <img class="card-img-top" src="img/card5.jpg" alt="Card image cap" />
+        <div class="card-body">
+          <h5 class="card-title" id="titulo-tarjetas">Pizza Funghi</h5>
+          <p class="card-text">
+            Tradicionalmente, la pizza de champiñones o fungui no lleva ni tomate ni queso; solo champiñones, que normalmente son de la variedad Portobello.
+          </p>
+          <center>
+            <a href="#" class="btn btn-primary">Comprar</a>
+          </center>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem">
+        <img class="card-img-top" src="img/card6.jpg" alt="Card image cap" />
+        <div class="card-body">
+          <h5 class="card-title" id="titulo-tarjetas">Pizza margarita</h5>
+          <p class="card-text">
+            La pizza margarita la preferida de los auténticos amantes de la pizza tradicional: salsa de tomate, mozzarella, albahaca, orégano y aceite de oliva.
+          </p>
+          <center>
+            <a href="#" class="btn btn-primary">Comprar</a>
+          </center>
+        </div>
+      </div>
+    </div>
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
   </body>

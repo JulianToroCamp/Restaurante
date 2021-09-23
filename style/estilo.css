@@ -1,0 +1,56 @@
+header{
+	text-align: center;
+	background-color: #277bb3;
+}
+
+#menu{
+	background-color: #277bb3;
+	padding: 50px;
+}
+
+#menu a{
+	color: white;
+	margin-bottom: 10px;
+}
+
+#menu a:hover{
+	color: #ffaa00;
+}
+
+footer{
+	background-color: gray;
+	color: white;
+	text-align: center;
+	padding: 20px;
+}
+
+#menu h3{
+	color: white;
+}
+
+#contenido{
+	padding-top: 50px;
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-bottom: 20px;
+}
+
+#resultado{
+	color: red;
+}
+
+#verde{
+	color: green;
+}
+
+#insertar div div input, button{
+	margin-top: 5px;
+	border-width: 1px;
+	border-color: #277bb3;
+	border-style: solid;
+}
+
+
+
+
+

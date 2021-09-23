@@ -35,57 +35,59 @@
         </div>
       </div>
     </nav>
-    <div class="col-lg-12 justify-content-end" id="contenido">
-      <h2>Ordenes de compra</h2>
-      <button id="boton" class="btn btn-primary" onclick="mostrar_formulario(1);">Tomar orden</button>
+    <div class="col-12 justify-content-end" id="contenido">
+      <center>
+        <div class="container" id="texto-ordenes">
+          <h2>Ordenes de compra</h2>
+          <button id="boton" class="btn btn-primary" onclick="mostrar_formulario(1);">Tomar orden</button>
+        </div>
+      </center>
       <br /><br />
       <div id="insertar" style="display: none">
-        <div class="row">
-          <div class="col-lg-4">
+        <div class="row justify-content-center">
+          <div class="col-4">
             <input type="text" name="nombre" id="nombre" placeholder="Orden" class="form-control" />
           </div>
-          <div class="col-lg-4">
+          <div class="col-4">
             <input type="number" name="v_compra" id="v_compra" placeholder="Valor a pagar" class="form-control" />
-          </div>
-          <div class="col-lg-4">
-            <input type="text" name="domicilio" id="domicilio" placeholder="domicilio" class="form-control" />
           </div>
         </div>
         <br />
-        <div class="row">
-          <div class="col-lg-4">
+        <div class="row justify-content-center">
+          <div class="col-4">
+            <input type="text" name="domicilio" id="domicilio" placeholder="domicilio" class="form-control" />
+          </div>
+          <div class="col-4">
             <input type="number" name="v_domicilio" id="v_domicilio" placeholder="valor de domicilio" class="form-control" />
           </div>
-          <div class="col-lg-4">
+        </div>
+        <br />
+        <div class="row justify-content-center">
+          <div class="col-4">
             <input type="text" name="bebidas" id="bebidas" placeholder="Bebidas" class="form-control" />
           </div>
-          <div class="col-lg-4">
+          <div class="col-4">
             <input type="number" name="v_bebidas" id="v_bebidas" placeholder="valor de bebidas" class="form-control" />
           </div>
         </div>
-        <br />
-        <div class="row">
-          <div class="col-lg-4">
-            <button id="guardar" class="btn btn-primary" onclick="insertar_producto();">Guardar orden</button>
-          </div>
-          <div class="col-lg-4">
-            <button id="cancelar" class="btn btn-secondary" onclick="mostrar_formulario(2);">Cancelar</button>
-          </div>
+        <div class="d-flex justify-content-center"">
+          <button class="btn btn-primary"  id="botones-tomar-orden" onclick="insertar_producto();">Guardar orden</button>
+          <button class="btn btn-secondary" id="botones-tomar-orden" onclick="mostrar_formulario(2);">Cancelar</button>
         </div>
         <br />
         <div class="row">
           <div class="col-lg-12">
-            <table border="1" width="95%">
-              <tr>
-                <th>Plato</th>
-                <th>Domicilio</th>
-                <th>Valor a facturar</th>
-                <th></th>
-                <th></th>
-                <th></th>
-              </tr>
-              <tbody id="leerprod"></tbody>
-            </table>
+            <center>
+              <table border="1">
+                <tr>
+                  <th>Plato</th>
+                  <th>Domicilio</th>
+                  <th>Valor a facturar</th>
+                  <th style="text-align: center;" colspan="4">Acciones</th>
+                </tr>
+                <tbody id="leerprod"></tbody>
+              </table>
+            </center>
           </div>
         </div>
       </div>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/style/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+
+    <title>Inventario</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <img src="/img/Pizza1.png" alt="pizza" id="logo" />
+      <a class="navbar-brand" id="texto-logo" href="#">John's Pizza</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+        <div class="navbar-nav" id="nav-menu">
+          <a class="nav-item nav-link" href="index.html">Inicio</a>
+          <a class="nav-item nav-link" href="login.html">Login</a>
+          <a class="nav-item nav-link disabled" href="#">Registro</a>
+        </div>
+      </div>
+    </nav>
+    <div class="container" id="inventario">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputEmail4">Nit</label>
+          <input type="number" class="form-control" id="nit-empresa" placeholder="nit de la empresa" />
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Nombre empresa</label>
+          <input type="text" class="form-control" id="nombre-empresa" placeholder="Nombre de la empresa" />
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Dirección empresa</label>
+          <input type="text" class="form-control" id="direccion" placeholder="Direccion empresa" />
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">telefono contacto</label>
+          <input type="number" class="form-control" id="telefono" placeholder="telefono de contacto" />
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Producto</label>
+          <input type="text" class="form-control" id="producto-proveedor" placeholder="Producto" />
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary" id="boton-proveedor-enviar" onclick="crearProveedor()">Registrar</button>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/conexion.js"></script>
+    <script src="/js/app1.js"></script>
+  </body>
+</html>

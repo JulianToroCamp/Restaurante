@@ -13,6 +13,11 @@ body {
     margin-left: 18%;
 }
 
+#botones-tomar-orden {
+    margin-top: 2%;
+    margin-right: 2%;
+}
+
 #login {
     margin-top: 15%;
     width: 40%;
@@ -61,8 +66,21 @@ body {
     font-weight: bold;
 }
 
+table {
+    background-color: beige;
+    width: 70%;
+}
+
+tbody tr:nth-child(even){
+    background-color:gray;
+}
+
 #texto-logo {
     margin-left: 0.5%;
+}
+
+#texto-ordenes {
+    margin-top: 5%;
 }
 
 @media (max-width: 576px) { 

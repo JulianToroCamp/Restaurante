@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Cream+Soda&display=swap');
+
+
+#corrousel-pizza {
+    padding: 0%;
+    width: 1000px;
+}
+
+body {
+    background-color:beige;
+}
+
+.card {
+    display: inline-block;
+    margin-top: 3%;
+    margin-left: 3%;
+}
+
+.card-body p {
+    text-align: justify;
+}
+
+#logo {
+    width: 5%;
+    margin-left: 10%;
+}
+
+#nav-menu {
+    margin-right: 20%;
+}
+
+#nav-menu a:hover {
+    font-weight: bold;
+}
+
+#texto-logo {
+    margin-left: 0.5%;
+}
+
+#titulos {
+    margin-top: 3%;
+    font-family: 'Courgette', cursive;
+}
+
+#titulo-tarjetas{
+    font-family: 'Cherry Cream Soda', cursive;
+}

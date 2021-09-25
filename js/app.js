@@ -34,6 +34,7 @@ function validarDatos(nombre, telefono, direccion, correo, contrasena) {
 
 async function adicionarUsuario(nombre, telefono, direccion, correo, contrasena) {
   let bandera = false;
+  let rol = "comprador";
 
   const query = await db.collection("users").get();
 
@@ -51,6 +52,7 @@ async function adicionarUsuario(nombre, telefono, direccion, correo, contrasena)
         Dirección: direccion,
         Correo: correo,
         Contraseña: contrasena,
+        Rol: rol,
       })
       .then((docRef) => {
         registroExitoso();

@@ -13,6 +13,16 @@ body {
     margin-left: 18%;
 }
 
+#botones-tomar-orden {
+    margin-top: 2%;
+    margin-right: 2%;
+}
+.label-orden{
+    color:rgb(85, 2, 2);
+    font-size: 24px;
+    font-weight: bold;
+}
+
 #login {
     width: 40%;
 }
@@ -64,10 +74,19 @@ body {
     margin-top: 3%;
     pointer-events: none;
     width: 20%;
+
 }
 
 #texto-logo {
     margin-left: 0.5%;
+}
+
+#texto-ordenes {
+    margin-top: 5%;
+}
+
+#titulo-pedido {
+    color:rgb(85, 2, 2);
 }
 
 @media (max-width: 576px) { 

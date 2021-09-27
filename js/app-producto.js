@@ -21,7 +21,7 @@ function insertar_producto() {
       ValorCompra: valorCompra,
     })
     .then((docRef) => {
-      console.log("El documento fue guardado con el id: ", docRef.id);
+      alert("El producto fué insertado exitosamente");
     })
     .catch((error) => {
       console.error("Error no guardo: ", error);
@@ -31,23 +31,29 @@ function insertar_producto() {
   document.getElementById("valorCompra").value = "";
 }
 
-function leerproducto() {
+async function leerproducto() {
   //document.getElementById("leerprod").innerHTML = '';
 
   db.collection("productos").onSnapshot((querySnapshot) => {
-    document.getElementById("leerprod").innerHTML = "";
+    let productos = false;
 
+    if (!productos) {
+      document.getElementById("productos-vacio").style.display = "block";
+      document.getElementById("tabla-productos").style.display = "none";
+    }
+    document.getElementById("leerprod").innerHTML = "";
     querySnapshot.forEach((doc) => {
-      console.log(`${doc.id} => ${doc.data()}`);
-      document.getElementById("leerprod").innerHTML += `
-		       	 <tr>
+      if (doc.data()) {
+        document.getElementById("productos-vacio").style.display = "none";
+        document.getElementById("tabla-productos").style.display = "table";
+        document.getElementById("leerprod").innerHTML += `
+		      <tr>
 		       	 	<td>${doc.data().Nombre}</td>
-						<td>$ ${doc.data().ValorCompra}.oo</td>
-						<td><button onclick="">Ver</button></td>
-						<td><button onclick="">Editar</button></td>
-						<td><button onclick="eliminarproducto('${doc.id}')">Borrar</button></td>
-					</tr> 
-		        `;
+						  <td>$ ${doc.data().ValorCompra} Cop</td>
+						  <td><button onclick="">Editar</button></td>
+						  <td><button onclick="eliminarproducto('${doc.id}')">Borrar</button></td>
+					</tr>`;
+      }
     });
   });
 }
@@ -57,12 +63,11 @@ leerproducto();
 function eliminarproducto(id) {
   //pregunto si voy a borrar
   if (confirm("Esta seguro de eliminar el registro")) {
-    db.collection("menu de venta")
+    db.collection("productos")
       .doc(id)
       .delete()
       .then(function () {
-        console.log("Document successfully deleted!");
-        alert("El producto fue borrado");
+        alert("El producto fúe borrado exitosamente");
       })
       .catch(function (error) {
         console.error("Error removing document: ", error);

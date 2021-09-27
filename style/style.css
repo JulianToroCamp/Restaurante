@@ -17,6 +17,11 @@ body {
     margin-top: 2%;
     margin-right: 2%;
 }
+
+#guardar {
+    margin-right: 20px;
+}
+
 .label-orden{
     color:rgb(85, 2, 2);
     font-size: 24px;
@@ -75,6 +80,24 @@ body {
     pointer-events: none;
     width: 20%;
 
+}
+
+table {
+    background-color: #f1f1f1;
+    display: none;
+}
+
+table th {
+    border: thin solid black;
+    text-align: center;
+}
+
+table td {
+    text-align: center;
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgb(219, 219, 219);
 }
 
 #texto-logo {

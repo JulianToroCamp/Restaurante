@@ -46,6 +46,7 @@
         <div id="insertar" style="display: none">
           <div class="row justify-content-center">
             <div class="col-md-4">
+              <input type="hidden" name="llave" value="" id="llave">
               <input type="text" name="nombre" id="nombre" placeholder="Nombre del producto" class="form-control" size="10" />
             </div>
             <div class="col-md-4">
@@ -56,6 +57,7 @@
           <div class="row justify-content-center">
             <div class="col-sm-12 col-md-12">
               <button id="guardar" class="btn btn-primary" onclick="insertar_producto();">Guardar producto</button>
+              <button id="editar" class="btn btn-primary" onclick="editarproducto();" style="display: none;">Editar Producto</button>	
               <button id="cancelar" class="btn btn-secondary" onclick="mostrar_formulario(2);">Cancelar</button>
             </div>
             <br /><br /><br />

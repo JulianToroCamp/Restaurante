@@ -134,11 +134,13 @@ function editarUsuario(id) {
   let direccion = document.getElementById("direccion").value;
   let correo = document.getElementById("correo").value;
 
+  console.log(nombre, telefono, direccion, correo);
+
   db.collection("users")
     .doc(id)
     .update({
       Nombre: nombre,
-      Telefóno: telefono,
+      Teléfono: telefono,
       Dirección: direccion,
       Correo: correo,
     })

@@ -231,8 +231,8 @@ async function recibirdatos1(id, nombreBebida, precio) {
 function editarbebida() {
 	
 	var id = document.getElementById('llave1').value;
-	var nombre = document.getElementById('nombreBebida').value;
-	var valorCompra = document.getElementById('precio').value;
+	var nombreBebida = document.getElementById('nombreBebida').value;
+	var precio = document.getElementById('precio').value;
 
 	
 	//edita la información
@@ -266,7 +266,7 @@ function editarbebida() {
 function registroExitoso1() {
   Swal.fire({
     icon: "success",
-    title: "Producto editado!",
+    title: "Bebida editada!",
     text: "Tú registro se ha actualizado en la base de datos!",
   }).then(function () {
     

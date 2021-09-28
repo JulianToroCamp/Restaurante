@@ -158,8 +158,8 @@ function insertar_bebida() {
 
   db.collection("bebidas")
     .add({
-      Nombre: nombreBebida,
-     Precio: precio,
+    Nombre: nombreBebida,
+    Precio: precio,
     })
     .then((docRef) => {
       alert("El producto fué insertado exitosamente");

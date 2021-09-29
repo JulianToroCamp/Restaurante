@@ -41,6 +41,7 @@ function insertar_producto() {
     })
     .then((docRef) => {
       alert("El producto fué insertado exitosamente");
+      location.href = "producto.html";
     })
     .catch((error) => {
       console.error("Error no guardo: ", error);
@@ -50,7 +51,7 @@ function insertar_producto() {
   document.getElementById("valorCompra").value = "";
 }
 
-async function leerproducto() {
+  function leerproducto() {
   //document.getElementById("leerprod").innerHTML = '';
 
   db.collection("productos").onSnapshot((querySnapshot) => {
@@ -87,6 +88,7 @@ function eliminarproducto(id) {
       .delete()
       .then(function () {
         alert("El producto fúe borrado exitosamente");
+        location.href = "producto.html";
       })
       .catch(function (error) {
         console.error("Error removing document: ", error);
@@ -98,7 +100,7 @@ function eliminarproducto(id) {
 
 //editar producto
 
-async function recibirdatos(id, nombre, valorCompra) {
+  function recibirdatos(id, nombre, valorCompra) {
 	document.getElementById('llave').value = id;
 	document.getElementById('nombre').value = nombre;
 	document.getElementById('valorCompra').value = valorCompra;
@@ -147,7 +149,7 @@ function registroExitoso() {
     title: "Producto editado!",
     text: "Tú registro se ha actualizado en la base de datos!",
   }).then(function () {
-    
+    location.href = "producto.html";
   });
 }
 
@@ -163,6 +165,7 @@ function insertar_bebida() {
     })
     .then((docRef) => {
       alert("El producto fué insertado exitosamente");
+      location.href = "producto.html";
     })
     .catch((error) => {
       console.error("Error no guardo: ", error);
@@ -172,7 +175,7 @@ function insertar_bebida() {
   document.getElementById("precio").value = "";
 }
 
-async function leerproducto1() {
+  function leerproducto1() {
   //document.getElementById("leerprod").innerHTML = '';
 
   db.collection("bebidas").onSnapshot((querySnapshot) => {
@@ -209,6 +212,7 @@ function eliminarbebida(id) {
       .delete()
       .then(function () {
         alert("la bebida fúe borrada exitosamente");
+        location.href = "producto.html";
       })
       .catch(function (error) {
         console.error("Error removing document: ", error);
@@ -220,7 +224,7 @@ function eliminarbebida(id) {
 
 //editar bebida
 
-async function recibirdatos1(id, nombreBebida, precio) {
+  function recibirdatos1(id, nombreBebida, precio) {
 	document.getElementById('llave1').value = id;
 	document.getElementById('nombreBebida').value = nombreBebida;
 	document.getElementById('precio').value = precio;
@@ -269,7 +273,7 @@ function registroExitoso1() {
     title: "Bebida editada!",
     text: "Tú registro se ha actualizado en la base de datos!",
   }).then(function () {
-    
+    location.href = "producto.html";
   });
 }
 

@@ -1,5 +1,19 @@
 var db = firebase.firestore();
 
+function comprobarSesion() {
+  let rol = localStorage.getItem("rol");
+  console.log(rol);
+  if (rol != "comprado") {
+    location.href = "login.html";
+  }
+}
+
+function cerrarSesion() {
+  localStorage.clear();
+}
+
+comprobarSesion();
+
 function mostrar_formulario(dato) {
   switch (dato) {
     case 1:
@@ -18,8 +32,7 @@ async function insertar_producto(precio) {
   let valorCompra = await consultarPrecioPizza(nombre);
   let precioBebida = await consultarPrecioBebidas(bebidas);
   let preciodomicilio = await consultarPrecioDomicilio(domicilio);
-  let valorTotal =
-    parseInt(valorCompra) + parseInt(precioBebida) + parseInt(preciodomicilio);
+  let valorTotal = parseInt(valorCompra) + parseInt(precioBebida) + parseInt(preciodomicilio);
 
   Swal.fire({
     title: "¿Confirmar pedido?",

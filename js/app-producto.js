@@ -1,3 +1,17 @@
+function comprobarSesion() {
+  let rol = localStorage.getItem("rol");
+  console.log(rol);
+  if (rol != "administrador") {
+    location.href = "login.html";
+  }
+}
+
+function cerrarSesion() {
+  localStorage.clear();
+}
+
+comprobarSesion();
+
 var db = firebase.firestore();
 
 function mostrar_formulario(dato) {
@@ -9,13 +23,13 @@ function mostrar_formulario(dato) {
       document.getElementById("insertar").style.display = "none";
       break;
     case 3:
-			document.getElementById('insertar').style.display = "block";
-			document.getElementById('guardar').style.display = "none";
-			document.getElementById('editar').style.display = "block";
-			break;
-		case 4:
-			document.getElementById('formproducto').style.display = "none";
-			break;
+      document.getElementById("insertar").style.display = "block";
+      document.getElementById("guardar").style.display = "none";
+      document.getElementById("editar").style.display = "block";
+      break;
+    case 4:
+      document.getElementById("formproducto").style.display = "none";
+      break;
     case 6:
       document.getElementById("insertar1").style.display = "block";
       break;
@@ -23,10 +37,10 @@ function mostrar_formulario(dato) {
       document.getElementById("insertar1").style.display = "none";
       break;
     case 8:
-			document.getElementById('insertar1').style.display = "block";
-			document.getElementById('guardar1').style.display = "none";
-			document.getElementById('editar1').style.display = "block";
-			break;
+      document.getElementById("insertar1").style.display = "block";
+      document.getElementById("guardar1").style.display = "none";
+      document.getElementById("editar1").style.display = "block";
+      break;
   }
 }
 
@@ -51,7 +65,7 @@ function insertar_producto() {
   document.getElementById("valorCompra").value = "";
 }
 
-  function leerproducto() {
+function leerproducto() {
   //document.getElementById("leerprod").innerHTML = '';
 
   db.collection("productos").onSnapshot((querySnapshot) => {
@@ -100,48 +114,42 @@ function eliminarproducto(id) {
 
 //editar producto
 
-  function recibirdatos(id, nombre, valorCompra) {
-	document.getElementById('llave').value = id;
-	document.getElementById('nombre').value = nombre;
-	document.getElementById('valorCompra').value = valorCompra;
-	
-	mostrar_formulario(3);	
+function recibirdatos(id, nombre, valorCompra) {
+  document.getElementById("llave").value = id;
+  document.getElementById("nombre").value = nombre;
+  document.getElementById("valorCompra").value = valorCompra;
+
+  mostrar_formulario(3);
 }
 
 function editarproducto() {
-	
-	var id = document.getElementById('llave').value;
-	var nombre = document.getElementById('nombre').value;
-	var valorCompra = document.getElementById('valorCompra').value;
+  var id = document.getElementById("llave").value;
+  var nombre = document.getElementById("nombre").value;
+  var valorCompra = document.getElementById("valorCompra").value;
 
-	
-	//edita la información
-	var productoRef = db.collection("productos").doc(id);
+  //edita la información
+  var productoRef = db.collection("productos").doc(id);
 
-	// Set the "capital" field of the city 'DC'
-	return productoRef.update({
-    Nombre: nombre,
-    ValorCompra: valorCompra,
-	})
-	.then(() => {
-	    console.log("El registro se guardo");
-	    registroExitoso ();	
-		 document.getElementById('nombre').value = "";
-		 document.getElementById('valorCompra').value = "";
-		 
-	
-	    mostrar_formulario(2);
-	})
-	.catch((error) => {
-	    // The document probably doesn't exist.
-	    console.error("Error editando el documento: ", error);
-	    alert("Error editando el documento: ", error)
-	});
-	
-	
+  // Set the "capital" field of the city 'DC'
+  return productoRef
+    .update({
+      Nombre: nombre,
+      ValorCompra: valorCompra,
+    })
+    .then(() => {
+      console.log("El registro se guardo");
+      registroExitoso();
+      document.getElementById("nombre").value = "";
+      document.getElementById("valorCompra").value = "";
+
+      mostrar_formulario(2);
+    })
+    .catch((error) => {
+      // The document probably doesn't exist.
+      console.error("Error editando el documento: ", error);
+      alert("Error editando el documento: ", error);
+    });
 }
-
-
 
 function registroExitoso() {
   Swal.fire({
@@ -153,15 +161,14 @@ function registroExitoso() {
   });
 }
 
-
 function insertar_bebida() {
   let nombreBebida = document.getElementById("nombreBebida").value;
   let precio = document.getElementById("precio").value;
 
   db.collection("bebidas")
     .add({
-    Nombre: nombreBebida,
-    Precio: precio,
+      Nombre: nombreBebida,
+      Precio: precio,
     })
     .then((docRef) => {
       alert("El producto fué insertado exitosamente");
@@ -175,7 +182,7 @@ function insertar_bebida() {
   document.getElementById("precio").value = "";
 }
 
-  function leerproducto1() {
+function leerproducto1() {
   //document.getElementById("leerprod").innerHTML = '';
 
   db.collection("bebidas").onSnapshot((querySnapshot) => {
@@ -224,48 +231,42 @@ function eliminarbebida(id) {
 
 //editar bebida
 
-  function recibirdatos1(id, nombreBebida, precio) {
-	document.getElementById('llave1').value = id;
-	document.getElementById('nombreBebida').value = nombreBebida;
-	document.getElementById('precio').value = precio;
-	
-	mostrar_formulario(8);	
+function recibirdatos1(id, nombreBebida, precio) {
+  document.getElementById("llave1").value = id;
+  document.getElementById("nombreBebida").value = nombreBebida;
+  document.getElementById("precio").value = precio;
+
+  mostrar_formulario(8);
 }
 
 function editarbebida() {
-	
-	var id = document.getElementById('llave1').value;
-	var nombreBebida = document.getElementById('nombreBebida').value;
-	var precio = document.getElementById('precio').value;
+  var id = document.getElementById("llave1").value;
+  var nombreBebida = document.getElementById("nombreBebida").value;
+  var precio = document.getElementById("precio").value;
 
-	
-	//edita la información
-	var productoRef = db.collection("bebidas").doc(id);
+  //edita la información
+  var productoRef = db.collection("bebidas").doc(id);
 
-	// Set the "capital" field of the city 'DC'
-	return productoRef.update({
-    Nombre: nombreBebida,
-    Precio: precio,
-	})
-	.then(() => {
-	    console.log("El registro se guardo");
-	    registroExitoso1();	
-		 document.getElementById('nombreBebida').value = "";
-		 document.getElementById('precio').value = "";
-		 
-	
-	    mostrar_formulario(6);
-	})
-	.catch((error) => {
-	    // The document probably doesn't exist.
-	    console.error("Error editando el documento: ", error);
-	    alert("Error editando el documento: ", error)
-	});
-	
-	
+  // Set the "capital" field of the city 'DC'
+  return productoRef
+    .update({
+      Nombre: nombreBebida,
+      Precio: precio,
+    })
+    .then(() => {
+      console.log("El registro se guardo");
+      registroExitoso1();
+      document.getElementById("nombreBebida").value = "";
+      document.getElementById("precio").value = "";
+
+      mostrar_formulario(6);
+    })
+    .catch((error) => {
+      // The document probably doesn't exist.
+      console.error("Error editando el documento: ", error);
+      alert("Error editando el documento: ", error);
+    });
 }
-
-
 
 function registroExitoso1() {
   Swal.fire({
@@ -276,5 +277,3 @@ function registroExitoso1() {
     location.href = "producto.html";
   });
 }
-
-

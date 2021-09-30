@@ -1,5 +1,45 @@
 let db = firebase.firestore();
 
+async function login() {
+  let correo = document.getElementById("email").value;
+  let contrasena = document.getElementById("contrasena").value;
+  let userEmail = "";
+  let userContrasena = "";
+  let rol = "";
+
+  if (correo != "" && contrasena != "") {
+    if (validarEmail(correo)) {
+      const usersRef = db.collection("users");
+
+      let query = await usersRef.where("Correo", "==", correo).get();
+
+      query.forEach((item) => {
+        userEmail = item.data().Correo;
+        userContrasena = item.data().Contraseña;
+        rol = item.data().Rol;
+
+        console.log(userEmail);
+        console.log(userContrasena);
+        console.log(rol);
+      });
+
+      if (userEmail === correo && userContrasena === contrasena && rol === "comprador") {
+        location.href = "usuario.html";
+        localStorage.setItem("rol", `${rol}`);
+      } else if (userEmail === correo && userContrasena === contrasena && rol === "administrador") {
+        location.href = "administracion.html";
+        localStorage.setItem("rol", `${rol}`);
+      } else {
+        loginNoExitoso();
+      }
+    } else {
+      alert("El email ingresado no es valido");
+    }
+  } else {
+    alert("todos los datos son obligatorios");
+  }
+}
+
 function crearUsuario() {
   let nombre = document.getElementById("nombre").value;
   let telefono = document.getElementById("telefono").value;
@@ -82,5 +122,16 @@ function registroNoExitoso() {
     text: "La dirección de correo ingresada ya existe en nuestra base de datos",
   }).then(function () {
     document.getElementById("correo").value = "";
+  });
+}
+
+function loginNoExitoso() {
+  Swal.fire({
+    icon: "error",
+    title: "Error al inicial sesión",
+    text: "La dirección de correo ingresada o la contraseña no son correctas",
+  }).then(function () {
+    document.getElementById("email").value = "";
+    document.getElementById("contrasena").value = "";
   });
 }

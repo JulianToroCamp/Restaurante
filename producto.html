@@ -30,8 +30,8 @@
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
         <div class="navbar-nav" id="nav-menu">
-          <a class="nav-item nav-link" href="index.html">Inicio</a>
-          <a class="nav-item nav-link disabled" href="#">cerrar sesion</a>
+          <a class="nav-item nav-link" href="administracion.html">Inicio</a>
+          <a class="nav-item nav-link" href="login.html">Cerrar sesion</a>
         </div>
       </div>
     </nav>
@@ -47,7 +47,7 @@
         <div id="insertar" style="display: none">
           <div class="row justify-content-center">
             <div class="col-md-4">
-              <input type="hidden" name="llave" value="" id="llave">
+              <input type="hidden" name="llave" value="" id="llave" />
               <input type="text" name="nombre" id="nombre" placeholder="Nombre del producto" class="form-control" size="10" />
             </div>
             <div class="col-md-4">
@@ -58,7 +58,7 @@
           <div class="row justify-content-center">
             <div class="col-sm-12 col-md-12">
               <button id="guardar" class="btn btn-primary" onclick="insertar_producto();">Guardar producto</button>
-              <button id="editar" class="btn btn-primary" onclick="editarproducto();" style="display: none;">Editar Producto</button>	
+              <button id="editar" class="btn btn-primary" onclick="editarproducto();" style="display: none">Editar Producto</button>
               <button id="cancelar" class="btn btn-secondary" onclick="mostrar_formulario(2);">Cancelar</button>
             </div>
             <br /><br /><br />
@@ -79,12 +79,13 @@
             </div>
           </div>
         </div>
-      </center><br>
+      </center>
+      <br />
       <center>
         <div id="insertar1" style="display: none">
           <div class="row justify-content-center">
             <div class="col-md-4">
-              <input type="hidden" name="llave1" value="" id="llave1">
+              <input type="hidden" name="llave1" value="" id="llave1" />
               <input type="text" name="nombre" id="nombreBebida" placeholder="Nombre de la bebida" class="form-control" size="10" />
             </div>
             <div class="col-md-4">
@@ -95,7 +96,7 @@
           <div class="row justify-content-center">
             <div class="col-sm-12 col-md-12">
               <button id="guardar1" class="btn btn-primary" onclick="insertar_bebida();">Guardar bebida</button>
-              <button id="editar1" class="btn btn-primary" onclick="editarbebida();" style="display: none;">Editar Bebida</button>	
+              <button id="editar1" class="btn btn-primary" onclick="editarbebida();" style="display: none">Editar Bebida</button>
               <button id="cancelar1" class="btn btn-secondary" onclick="mostrar_formulario(7);">Cancelar</button>
             </div>
             <br /><br /><br />
